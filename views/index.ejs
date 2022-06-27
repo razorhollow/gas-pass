@@ -1,16 +1,16 @@
 <%- include('./partials/html-head') %>
-<%- include('./partials/nav') %>
+</head> 
 
-<main>
-  <h1>hello, <%= user ? user.profile.name : "friend" %></h1>
-  <% if (user?.profile.avatar) { %>
-    <div>
-      <img
-        src="<%= user.profile.avatar %>"
-        alt="<%= user.profile.name %> avatar"
-      />
-    </div>
-  <% } %>
+<main class="d-flex flex-column justify-content-center min-vh-100">
+  <h1>Welcome to GasPass</h1>
+  <div id="logo-container">
+    <i class="fa-solid fa-gas-pump fa-10x"></i>
+  </div>
+  <a href="/auth/google" class="siwg-link">
+    <button type="submit" class="siwg">
+      <img id="siwg-image" alt="Sign in with Google" />
+    </button>
+  </a>
 </main>
 
 <%- include('./partials/footer') %>
