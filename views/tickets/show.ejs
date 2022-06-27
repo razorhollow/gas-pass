@@ -1,0 +1,12 @@
+<%- include('../partials/html-head') %>
+<%- include('../partials/nav') %> 
+
+<h1>Ticket Details</h1>
+<h2>Ticket Number: <%= ticket.ticketNumber %> </h2>
+<h2>Employee: <%= ticket.employee.name %> </h2>
+<h2>Ticket Date: <%= ticket.createdAt.toLocaleString() %> </h2>
+<h2>Ticket Amount: <%= ticket.amount %> </h2>
+
+ <% //if (taco.owner.equals(user?.profile._id)) { USE This for admin %> 
+
+<%- include('../partials/footer') %>

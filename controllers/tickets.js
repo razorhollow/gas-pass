@@ -41,8 +41,20 @@ function create (req, res) {
   })
 }
 
+function show(req, res) {
+  Ticket.findById(req.params.id)
+  .populate('employee')
+  .then(ticket => {
+    res.render('tickets/show', {
+      title: "Details",
+      ticket
+    })
+  })
+}
+
 export {
   index,
   newTicket as new,
-  create
+  create,
+  show
 }
