@@ -7,8 +7,8 @@ const router = Router()
 // GET localhost:3000/tickets
 router.get('/', isLoggedIn, ticketsCtrl.index)
 
-// // GET localhost:3000/profiles/:id
-// router.get('/:id', isLoggedIn, ticketsCtrl.show)
+// GET localhost:3000/tickets/:id
+router.get('/new', isLoggedIn, ticketsCtrl.new)
 
 // // POST localhost:3000/profiles/:id/cats
 // router.post('/:id/cats', isLoggedIn, ticketsCtrl.createTicket)

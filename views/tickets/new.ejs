@@ -1,0 +1,27 @@
+<%- include('../partials/html-head') %>
+<%- include('../partials/nav') %> 
+
+<main class="d-flex flex-column justify-content-center min-vh-100">
+  <div class="card">
+    <div class="card-body">
+      <h4 class="card-title">Ticket Number</h4>
+      <h2><%= ticketNumber %> </h2>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-body">
+      <h4 class="card-title">Pre-Pay Amount</h4>
+      <h2>59.95</h2>
+    </div>
+  </div>
+  <form 
+    action="/tickets",
+    method="POST"
+  >
+    <input hidden type="text" value="<%= ticketNumber %>" name="ticketNumber">
+    <input type="number" name="amount">
+    <button class="btn btn-outline-primary">Submit Ticket</button>
+  </form>
+</main>
+
+<%- include('../partials/footer') %>

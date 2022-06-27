@@ -9,7 +9,7 @@ const profileSchema = new mongoose.Schema({
   name: String,
   isAdmin: {type: Boolean, default: true},
   tickets: [ticketSchema],
-  currentBalance: {type: mongoose.Schema.Types.ObjectId, ref: "Balance"}
+  currentBalance: {type: Number, default: 100}
 }, {
   timestamps: true
 })
