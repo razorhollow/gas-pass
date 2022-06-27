@@ -10,8 +10,8 @@ router.get('/', isLoggedIn, ticketsCtrl.index)
 // GET localhost:3000/tickets/:id
 router.get('/new', isLoggedIn, ticketsCtrl.new)
 
-// // POST localhost:3000/profiles/:id/cats
-// router.post('/:id/cats', isLoggedIn, ticketsCtrl.createTicket)
+// POST localhost:3000/profiles/:id/cats
+router.post('/', isLoggedIn, ticketsCtrl.create)
 
 // // DELETE localhost:3000/profiles/cats/:id
 // router.delete('/cats/:id', isLoggedIn, ticketsCtrl.deleteTicket)
