@@ -1,8 +1,8 @@
 import mongoose from 'mongoose'
 
 const balanceSchema = new mongoose.Schema({
-  name: String,
-  amount: {type: Boolean, default: true},
+  employee: {type: Schema.Types.ObjectId, ref: "Profile"},
+  amount: Number,
 }, {
   timestamps: true
 })
