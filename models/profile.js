@@ -10,6 +10,7 @@ const ticketSchema = new mongoose.Schema({
 const profileSchema = new mongoose.Schema({
   name: String,
   isAdmin: {type: Boolean, default: true},
+  isActive: {type: Boolean, default: true},
   tickets: [ticketSchema],
 }, {
   timestamps: true
