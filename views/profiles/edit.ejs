@@ -1,0 +1,37 @@
+<%- include('../partials/html-head') %>
+<%- include('../partials/nav') %> 
+
+<h1>Employee Details</h1>
+<form action="/profiles/<%= profile._id %>?_method=PUT" method="POST">
+  <label>
+    Name:
+    <input 
+      type="text" 
+      name="name"
+      value="<%= profile.name %>"
+      autocomplete="off"
+    >
+  </label>
+  <label>
+    Admin ?
+    <input 
+      type="checkbox" 
+      name="isAdmin"
+      <%= profile.isAdmin ? "checked" : "" %> 
+    >
+  </label>
+  <label>
+    Active ?
+    <input 
+      type="checkbox" 
+      name="isActive"
+      <%= profile.isActive ? "checked" : "" %> 
+    >
+  </label>
+  <input type="text" name="tickets" value="<%= profile.tickets %> ">
+  <button type="submit">Save Changes</button>
+</form>
+
+ <% //if (taco.owner.equals(user?.profile._id)) { USE This for admin %> 
+
+<%- include('../partials/footer') %>

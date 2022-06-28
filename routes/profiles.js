@@ -4,26 +4,14 @@ import * as profilesCtrl from '../controllers/profiles.js'
 
 const router = Router()
 
-// GET localhost:3000/tickets
-router.get('/', isLoggedIn, profilesCtrl.index)
-
-// GET localhost:3000/tickets/new
-router.get('/new', isLoggedIn, profilesCtrl.new)
-
 // GET localhost:3000/tickets/:id
-router.get('/:id', isLoggedIn, profilesCtrl.show)
+// router.get('/:id', isLoggedIn, profilesCtrl.show)
 
 // GET localhost:3000/tickets/:id/edit
-router.get('/:id/edit', profilesCtrl.edit)
-
-// POST localhost:3000/tickets
-router.post('/', isLoggedIn, profilesCtrl.create)
+router.get('/:id/edit', isLoggedIn, profilesCtrl.edit)
 
 // PUT localhost:3000/tickets/:id
-router.put('/:id', isLoggedIn, profilesCtrl.update)
-
-// DELETE localhost:3000/tickets/:id
-router.delete('/:id', isLoggedIn, profilesCtrl.delete)
+// router.put('/:id', isLoggedIn, profilesCtrl.update)
 
 export {
   router
