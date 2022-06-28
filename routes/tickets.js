@@ -16,8 +16,8 @@ router.get('/:id', isLoggedIn, ticketsCtrl.show)
 // POST localhost:3000/profiles/:id/cats
 router.post('/', isLoggedIn, ticketsCtrl.create)
 
-// // DELETE localhost:3000/profiles/cats/:id
-// router.delete('/cats/:id', isLoggedIn, ticketsCtrl.deleteTicket)
+// DELETE localhost:3000/tickets/:id
+router.delete('/:id', isLoggedIn, ticketsCtrl.delete)
 
 export {
   router

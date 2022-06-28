@@ -52,9 +52,21 @@ function show(req, res) {
   })
 }
 
+function deleteTicket(req, res) {
+  Ticket.findByIdAndDelete(req.params.id)
+  .then(ticket => {
+    res.redirect('/admin')
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect("/admin")
+  })
+}
+
 export {
   index,
   newTicket as new,
   create,
-  show
+  show,
+  deleteTicket as delete,
 }
