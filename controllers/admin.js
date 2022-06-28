@@ -4,9 +4,13 @@ import { Profile } from '../models/profile.js'
 function index(req, res) {
   Ticket.find({})
   .then(tickets => {
-    res.render('admin/index', {
-      title: 'Admin Dashboard',
-      tickets
+    Profile.find({})
+    .then(profiles => {
+      res.render('admin/index', {
+        title: 'Admin Dashboard',
+        tickets,
+        profiles
+      })
     })
   })
   .catch(err => {

@@ -4,6 +4,43 @@
 <h1 class="container text-center">Admin Dashboard</h1>
 
 <section id="users" class="container">
+  <p>
+    <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#profile-table" aria-expanded="false" aria-controls="collapseExample">
+    Employee Index
+    </button>
+</p>
+<div class="collapse" id="profile-table">
+  <div class="card card-body">
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Employee</th>
+          <th scope="col">Admin</th>
+          <th scope="col">Active</th>
+          <th scope="col">Registered On</th>
+          <th scope="col">Edit Permissions</th>
+          <th scope="col">Deactivate</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% profiles.forEach(profile => { %>
+          <tr>
+            <th scope="row"><%= profile.name %></th>
+            <td><%= profile.isAdmin %></td>
+            <td><%= profile.isActive %></td>
+            <td><%= profile.createdAt.toLocaleString() %></td>
+            <td><a href="/profiles/<%= profile._id %>/edit"><button class="btn btn-outline-dark">Edit</button></a></td>
+            <td>
+              <form action="/profiles/<%= profile._id %>?_method=PATCH" method="POST">
+                <button class="btn btn-outline-dark delete-btn">Deactivate</button>
+              </form>
+            </td>
+          </tr>
+        <% }) %> 
+      </tbody>
+    </table>
+  </div>
+</div>
 
 </section>
 
