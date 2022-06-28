@@ -15,6 +15,26 @@ function edit(req, res) {
   })
 }
 
+function toggleAdmin(req, res) {
+  Profile.findById(req.params.id)
+  .then(profile => {
+    profile.isAdmin = !profile.isAdmin
+    profile.save()
+    .then(() => {
+      res.redirect('/admin')
+    })
+    .catch(err => {
+      console.log(err)
+      res.redirect("/admin")
+    })
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect("/admin")
+  })
+}
+
 export {
-  edit
+  edit,
+  toggleAdmin
 }

@@ -28,7 +28,7 @@
             <td><%= profile.isAdmin %></td>
             <td><%= profile.isActive %></td>
             <td><%= profile.createdAt.toLocaleString() %></td>
-            <td><a href="/profiles/<%= profile._id %>/edit"><button class="btn btn-outline-dark">Edit</button></a></td>
+            <td><form action="/profiles/<%= profile._id %>/toggle-admin?_method=PATCH" method="POST"><button class="btn btn-outline-dark">Toggle Admin</button></form></td>
           </tr>
         <% }) %> 
       </tbody>

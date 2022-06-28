@@ -28,7 +28,7 @@
       <%= profile.isActive ? "checked" : "" %> 
     >
   </label>
-  <input type="text" name="tickets" value="<%= profile.tickets %> ">
+  <input type="text" name="tickets" value="<%- profile.tickets %>">
   <button type="submit">Save Changes</button>
 </form>
 
