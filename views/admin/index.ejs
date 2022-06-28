@@ -33,7 +33,7 @@
             <td><%= ticket.createdAt.toLocaleString() %></td>
             <td><%= ticket.employee %></td>
             <td><%= ticket.amount %></td>
-            <td><button class="btn btn-outline-dark">Edit</button></td>
+            <td><a href="/tickets/<%= ticket._id %>/edit"><button class="btn btn-outline-dark">Edit</button></a></td>
             <td>
               <form action="/tickets/<%= ticket._id %>?_method=DELETE" method="POST">
                 <button class="btn btn-outline-dark delete-btn">Delete</button>

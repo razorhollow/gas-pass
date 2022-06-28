@@ -1,0 +1,18 @@
+<%- include('../partials/html-head') %>
+<%- include('../partials/nav') %> 
+
+<h1>Ticket Details</h1>
+<h2>Ticket Number: <%= ticket.ticketNumber %></h2>
+<h2>Employee: <%= ticket.employee.name %> </h2>
+<h2>Ticket Date: <%= ticket.createdAt.toLocaleString() %> </h2>
+<form action="/tickets/<%= ticket._id %>?_method=PUT" method="POST">
+  <input hidden type="text" name="ticketNumber" value="<%= ticket.ticketNumber %>">
+  <input hidden type="text" name="employee" value="<%= ticket.employee._id %>">
+  <label for="update-ticket">$Ticket Amount</label>
+  <input name="amount" value="<%= ticket.amount %>" id="update-amount"></input>
+<button type="submit">Update</button>
+</form>
+
+ <% //if (taco.owner.equals(user?.profile._id)) { USE This for admin %> 
+
+<%- include('../partials/footer') %>

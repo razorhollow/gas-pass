@@ -63,10 +63,41 @@ function deleteTicket(req, res) {
   })
 }
 
+function edit (req, res) {
+  Ticket.findById(req.params.id)
+  .populate('employee')
+  .then(ticket => {
+    res.render('tickets/edit', {
+      ticket,
+      title: "Edit Ticket"
+    })
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect("/admin")
+  })
+}
+
+function update (req, res){
+  Ticket.findById(req.params.id)
+  .then(ticket => {
+    ticket.updateOne(req.body, {new: true})
+    .then(updatedTicket => {
+      res.redirect('/admin')
+    })
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect("/admin")
+  })
+}
+
 export {
   index,
   newTicket as new,
   create,
   show,
   deleteTicket as delete,
+  edit,
+  update
 }
