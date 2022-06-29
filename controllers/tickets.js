@@ -11,33 +11,41 @@ function index(req, res) {
         title: "Dashboard",
         tickets,
         profile
+      })
     })
-
+    .catch(err => {
+      console.log(err)
+      res.redirect("/")
+    })
   })
+  .catch (err => {
+    console.log(err)
+    res.redirect("/")
   })
 }
 
 function newTicket(req, res) {
   // console.log('THE TICKET NUMBER IS: ', random(6).toUpperCase())
-  res.render('tickets/new', {
-    title: "New Ticket",
-    ticketNumber: random(6).toUpperCase()
-  })
+  Profile.findById(req.user.profile._id)
+    .then(profile => {
+      res.render('tickets/new', {
+      title: "New Ticket",
+      ticketNumber: random(6).toUpperCase(),
+      profile
+      })
+    })
+    .catch(err => {
+      console.log(err)
+      res.redirect("/")
+    })
+    
 }
 
 function create (req, res) {
   req.body.employee = req.user.profile._id
   Ticket.create(req.body) 
   .then(ticket => {
-    Profile.findById(req.user.profile._id)
-    .then(profile=> {
-      console.log(profile)
-      profile.tickets.push(ticket._id)
-      profile.save()
-      .then(() => {
-        res.redirect('/tickets')
-      })
-    })
+    res.redirect('/tickets')
   })
   .catch(err => {
     console.log(err)
@@ -45,13 +53,21 @@ function create (req, res) {
   })
 }
 
+
 function show(req, res) {
   Ticket.findById(req.params.id)
   .populate('employee')
   .then(ticket => {
-    res.render('tickets/show', {
+    Profile.findById(req.user.profile._id)
+    .then(profile => {
+      res.render('tickets/show', {
       title: "Details",
       ticket
+      })
+    })
+    .catch(err => {
+      console.log(err)
+      res.redirect('/')
     })
   })
 }

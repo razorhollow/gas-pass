@@ -14,6 +14,7 @@ function isAdmin(req, res, next) {
   Profile.findById(req.user.profile._id)
   .then(profile => {
     if(profile.isAdmin) {
+      profile 
       return next()
     }else {
       res.redirect('/auth/google')
