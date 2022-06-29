@@ -1,7 +1,7 @@
 <%- include('../partials/html-head') %>
 
-<h1 class="container text-center">Admin Dashboard</h1>
-<div class="container">
+<h1 class="container text-center m-5">Admin Dashboard</h1>
+<div class="container mt-5">
   <div class="row">
     <section id="users" class="col">
       <p>
@@ -91,15 +91,13 @@
       </div>
   </div>
   <div class="row">
-    <div class="col">
-      <section id="refill">
+      <section id="refill" class="col">
         <form action="/admin/refill?_method=PUT" method="POST"><button class="btn btn-outline-dark">Refill Balances</button></form>
       </section>
-    </div>
-    <div class="col"></div>
+    <div class="col">
       <a href="/tickets">
         <button type="submit" class="btn btn-outline-dark">Exit Admin Dash</button></a>
-      </div>
+    </div>
       <div class="col">  
       <a href="/auth/logout">
           <button type="submit" class="btn btn-outline-dark">Logout</button>
