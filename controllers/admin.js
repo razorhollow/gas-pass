@@ -1,15 +1,21 @@
 import { Ticket } from '../models/ticket.js'
 import { Profile } from '../models/profile.js'
+import { Allowance } from '../models/allowance.js'
 
 function index(req, res) {
   Ticket.find({})
   .then(tickets => {
     Profile.find({})
     .then(profiles => {
-      res.render('admin/index', {
-        title: 'Admin Dashboard',
-        tickets,
-        profiles
+      Allowance.findOne({})
+      .then(allowance => {
+        console.log('THIS IS THE ALLOWANCE', allowance)
+        res.render('admin/index', {
+          title: 'Admin Dashboard',
+          tickets,
+          profiles,
+          allowance
+      })
       })
     })
   })
@@ -19,6 +25,18 @@ function index(req, res) {
   })
 }
 
+function createAllowance(req, res) {
+  Allowance.create(req.body)
+  .then(allowance => {
+    res.redirect('/admin')
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/')
+  })
+}
+
 export {
   index,
+  createAllowance
 }

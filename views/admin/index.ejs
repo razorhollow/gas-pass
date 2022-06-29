@@ -35,6 +35,8 @@
     </table>
   </div>
 </div>
+</section>
+<section>
 
 </section>
 
@@ -76,6 +78,13 @@
     </table>
   </div>
 </div>
+</section>
+<section id="allowance">
+  <h3>The current weekly allowance is: <%= allowance.amount %> </h3>
+  <form action="/admin?_method=PUT" method="POST">
+    <input type="number" name="amount">
+    <button class="btn btn-outline-dark">Change Allowance</button>
+  </form>
 </section>
 
 <%- include('../partials/footer') %>

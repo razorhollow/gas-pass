@@ -7,6 +7,11 @@ const router = Router()
 // GET localhost:3000/admin
 router.get('/', isLoggedIn, adminCtrl.index)
 
+//POST localhost:3000/admin
+router.post('/', adminCtrl.createAllowance)
+
+//PUT LOCALHOST:3000/admin
+
 export {
   router
 }
