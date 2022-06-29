@@ -4,7 +4,7 @@
 
 <section id="users" class="container">
   <p>
-    <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#profile-table" aria-expanded="false" aria-controls="collapseExample">
+    <button class="btn btn-outline-dark" type="button" data-bs-toggle="collapse" data-bs-target="#profile-table" aria-expanded="false" aria-controls="collapseExample">
     Employee Index
     </button>
 </p>
@@ -24,8 +24,8 @@
         <% profiles.forEach(profile => { %>
           <tr>
             <th scope="row"><%= profile.name %></th>
-            <td><%= profile.isAdmin %></td>
-            <td><%= profile.isActive %></td>
+            <td><%= profile.isAdmin ? "✔️" : "" %></td>
+            <td><%= profile.isActive ? "✔️" : "" %></td>
             <td><%= profile.createdAt.toLocaleString() %></td>
             <td><form action="/profiles/<%= profile._id %>/toggle-admin?_method=PATCH" method="POST"><button class="btn btn-outline-dark">Toggle Admin</button></form></td>
           </tr>
@@ -35,13 +35,10 @@
   </div>
 </div>
 </section>
-<section>
-
-</section>
 
 <section id="all-tickets" class="container">
   <p>
-    <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#ticket-table" aria-expanded="false" aria-controls="collapseExample">
+    <button class="btn btn-outline-dark" type="button" data-bs-toggle="collapse" data-bs-target="#ticket-table" aria-expanded="false" aria-controls="collapseExample">
     Ticket Index
     </button>
 </p>
@@ -52,7 +49,6 @@
         <tr>
           <th scope="col">Ticket Number</th>
           <th scope="col">Date</th>
-          <th scope="col">Employee</th>
           <th scope="col">Amount</th>
           <th scope="col">Edit</th>
           <th scope="col">Delete</th>
@@ -63,7 +59,6 @@
           <tr>
             <th scope="row"><%= ticket.ticketNumber %></th>
             <td><%= ticket.createdAt.toLocaleString() %></td>
-            <td><%= ticket.employee %></td>
             <td><%= ticket.amount %></td>
             <td><a href="/tickets/<%= ticket._id %>/edit"><button class="btn btn-outline-dark">Edit</button></a></td>
             <td>
@@ -79,11 +74,26 @@
 </div>
 </section>
 <section id="allowance">
-  <h3>The current weekly allowance is: <%= allowance.amount %> </h3>
-  <form action="/admin?_method=PUT" method="POST">
-    <input type="number" name="amount">
-    <button class="btn btn-outline-dark">Change Allowance</button>
-  </form>
+  <p>
+    <button class="btn btn-outline-dark" type="button" data-bs-toggle="collapse" data-bs-target="#allowance-table" aria-expanded="false" aria-controls="collapseExample">
+    Weekly Allowance
+    </button>
+</p>
+<div class="collapse" id="allowance-table">
+  <div class="card card-body">
+    <h3>The current weekly allowance is: <%= allowance.amount %> </h3>
+    <form action="/admin?_method=PUT" method="POST">
+      <input type="number" name="amount">
+      <button class="btn btn-outline-dark">Change Allowance</button>
+    </form>
+  </div>
+</div>
 </section>
+
+<a href="/tickets">
+  <button type="submit" class="btn btn-outline-dark">Exit Admin Dash</button></a>  
+<a href="/auth/logout">
+    <button type="submit" class="btn btn-outline-dark">Logout</button>
+  </a>
 
 <%- include('../partials/footer') %>

@@ -1,5 +1,4 @@
 <%- include('../partials/html-head') %>
-<%- include('../partials/nav') %> 
 
 <main class="d-flex flex-column justify-content-center min-vh-100">
   <div class="card">
@@ -19,7 +18,7 @@
     method="POST"
   >
     <input hidden type="text" value="<%= ticketNumber %>" name="ticketNumber">
-    <input type="number" name="amount">
+    <input type="number" step="any" name="amount">
     <button class="btn btn-outline-primary">Submit Ticket</button>
   </form>
 </main>
