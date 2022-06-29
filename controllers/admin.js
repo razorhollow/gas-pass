@@ -44,10 +44,16 @@ function updateAllowance(req, res) {
       res.redirect('/admin')
     })
   })
-    
 }
+
+function refill(req, res) {
+
+}
+
+
 export {
   index,
   createAllowance,
-  updateAllowance
+  updateAllowance,
+  refill
 }

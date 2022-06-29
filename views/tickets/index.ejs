@@ -20,7 +20,7 @@
     <h2>Previous Tickets</h2>
     <ul>
       <% tickets.forEach(ticket => { %>
-        <a href="/tickets/<%= ticket._id %>" class="text-light"><li><%= ticket.ticketNumber %></a> | <%= ticket.createdAt.toLocaleString() %></li>
+        <a href="/tickets/<%= ticket._id %>" class="text-light"><li class="p-3"><%= ticket.ticketNumber %></a>  |  <%= ticket.createdAt.toLocaleString() %></li>
       <% }) %> 
     </ul>
   <% } %>
