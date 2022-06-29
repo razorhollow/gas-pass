@@ -11,6 +11,7 @@ router.get('/', isLoggedIn, adminCtrl.index)
 router.post('/', adminCtrl.createAllowance)
 
 //PUT LOCALHOST:3000/admin
+router.put('/', adminCtrl.updateAllowance)
 
 export {
   router

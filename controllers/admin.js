@@ -36,7 +36,18 @@ function createAllowance(req, res) {
   })
 }
 
+function updateAllowance(req, res) {
+  Allowance.findOne({})
+  .then(allowance => {
+    allowance.updateOne(req.body, {new: true})
+    .then(updatedAllowance => {
+      res.redirect('/admin')
+    })
+  })
+    
+}
 export {
   index,
-  createAllowance
+  createAllowance,
+  updateAllowance
 }
