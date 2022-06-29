@@ -5,9 +5,13 @@ import random from 'random-key-generator'
 function index(req, res) {
   Ticket.find({employee: req.user.profile._id})
   .then(tickets => {
-    res.render('tickets/index', {
-      title: "Dashboard",
-      tickets
+    Profile.findById(req.user.profile._id)
+    .then(profile => {
+      res.render('tickets/index', {
+        title: "Dashboard",
+        tickets,
+        profile
+    })
 
   })
   })
