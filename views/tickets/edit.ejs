@@ -9,8 +9,9 @@
   <input hidden type="text" name="employee" value="<%= ticket.employee._id %>">
   <label for="update-ticket">$Ticket Amount</label>
   <input name="amount" value="<%= ticket.amount %>" id="update-amount"></input>
-<button type="submit">Update</button>
+<button type="submit" class="btn btn-outline-light">Update</button>
 </form>
+<a href="/tickets"><button type="submit" class="btn btn-outline-light">Cancel</button></a>
 
  <% //if (taco.owner.equals(user?.profile._id)) { USE This for admin %> 
 

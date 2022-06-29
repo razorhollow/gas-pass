@@ -1,23 +1,17 @@
-  <% if (!user) { %>
-    <link rel="stylesheet" href="/stylesheets/siwg.css">
-  <% } %>
+
 </head>
 <body>
-  <nav>
+  <nav class="nav justify-content-end align-baseline p-3">
     <% if (user) { %>
-      <a href="/auth/logout">
-        <button type="submit">Logout</button>
+      <a href="/auth/logout" class="nav-link">
+        Logout
       </a>
       <% if (profile.isAdmin) {%> 
-      <a href="/admin/">
-        <button type="submit">Admin Dashboard</button>
-      </a>
+      <a href="/admin" class="nav-link">
+        Admin Dashboard</a>
       <% } %> 
     <% } else { %>
-      <a href="/auth/google" class="siwg-link">
-        <button type="submit" class="siwg">
-          <img id="siwg-image" alt="Sign in with Google" />
-        </button>
+      <a href="/auth/google" class="nav-link">Login
       </a>
     <% } %>
   </nav>

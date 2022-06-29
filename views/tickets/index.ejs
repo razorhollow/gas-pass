@@ -1,7 +1,7 @@
 <%- include('../partials/html-head') %>
 <%- include('../partials/nav') %>
-<main>
-  <h1>Hey There, <%= user.profile.name %>!</h1>
+<main class="container pt-4">
+  <h1 class="mb-3">Hey There, <%= user.profile.name %>!</h1>
   <% if (user?.profile.avatar) { %>
     <div>
       <img
@@ -10,7 +10,7 @@
       />
     </div>
   <% } %>
-  <a href="/tickets/new"><button class="btn btn-primary">Pump Gas</button></a>
+  <a href="/tickets/new" class="w-100 min-vh-10 d-flex justify-content-center text-decoration-none"><button class="btn btn-outline-light w-50 m-5 fs-2">Pump Gas</button></a>
   <h3>Remaining Weekly Allowance</h3>
   <div class="progress w-90">
     <div class="progress-bar w-75" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
@@ -20,7 +20,7 @@
     <h2>Previous Tickets</h2>
     <ul>
       <% tickets.forEach(ticket => { %>
-        <a href="/tickets/<%= ticket._id %>"><li><%= ticket.ticketNumber %></a> | <%= ticket.createdAt.toLocaleString() %></li>
+        <a href="/tickets/<%= ticket._id %>" class="text-light"><li><%= ticket.ticketNumber %></a> | <%= ticket.createdAt.toLocaleString() %></li>
       <% }) %> 
     </ul>
   <% } %>

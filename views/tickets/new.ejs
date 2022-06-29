@@ -16,10 +16,12 @@
   <form 
     action="/tickets",
     method="POST"
+    class="d-flex justify-content-around w-50 mt-4"
   >
     <input hidden type="text" value="<%= ticketNumber %>" name="ticketNumber">
     <input type="number" step="any" name="amount">
-    <button class="btn btn-outline-primary">Submit Ticket</button>
+    <button class="btn btn-outline-light">Submit Ticket</button>
+    <a href="/tickets"><button class="btn btn-outline-light">Cancel</button></a>
   </form>
 </main>
 
