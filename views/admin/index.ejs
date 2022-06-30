@@ -31,7 +31,7 @@
                 <td><%= profile.isAdmin ? "✔️" : "" %></td>
                 <td><%= profile.isActive ? "✔️" : "" %></td>
                 <td><%= profile.createdAt.toLocaleString() %></td>
-                <td><form action="/profiles/<%= profile._id %>/toggle-admin?_method=PATCH" method="POST"><button class="btn btn-outline-dark">Toggle Admin</button></form></td>
+                <td><form action="/profiles/<%= profile._id %>/toggle-admin?_method=PATCH" method="POST"><button class="btn btn-outline-dark toggle-button">Toggle Admin</button></form></td>
               </tr>
             <% }) %> 
           </tbody>
@@ -63,10 +63,10 @@
                 <th scope="row"><%= ticket.ticketNumber %></th>
                 <td><%= ticket.createdAt.toLocaleString() %></td>
                 <td><%= ticket.amount %></td>
-                <td><a href="/tickets/<%= ticket._id %>/edit"><button class="btn btn-outline-dark">Edit</button></a></td>
+                <td><a href="/tickets/<%= ticket._id %>/edit"><button class="btn btn-outline-dark toggle-button">Edit</button></a></td>
                 <td>
                   <form action="/tickets/<%= ticket._id %>?_method=DELETE" method="POST">
-                    <button class="btn btn-outline-dark delete-btn">Delete</button>
+                    <button class="btn btn-outline-dark delete-btn toggle-button">Delete</button>
                   </form>
                 </td>
               </tr>
@@ -88,7 +88,7 @@
           <h3>The current weekly allowance is: $ <%= allowance.amount %> </h3>
           <form action="/admin?_method=PUT" method="POST">
             <input type="number" name="amount" placeholder="150">
-            <button class="btn btn-outline-dark m-3">Change Allowance</button>
+            <button class="btn btn-outline-dark p-1">Change Allowance</button>
           </form>
         </div>
       </div>
