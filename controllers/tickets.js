@@ -48,7 +48,18 @@ function create (req, res) {
   req.body.employee = req.user.profile._id
   Ticket.create(req.body) 
   .then(ticket => {
-    res.redirect('/tickets')
+    Profile.findById(req.user.profile._id)
+    .populate("currentBalance")
+    .then(profile => {
+      Balance.findById(profile.currentBalance._id)
+      .then(balance => {
+        balance.amount -= ticket.amount
+        balance.save()
+        .then(updatedBalance=> {
+          res.redirect('/tickets')
+        })
+      })
+    })
   })
   .catch(err => {
     console.log(err)
