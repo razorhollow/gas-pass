@@ -4,10 +4,23 @@ h4 {
   margin: 1em 0;
 }
 
+li {
+  padding: 10px 5px;
+}
+
 .list-group {
   font-size: 2em;
+}
+
+.index-card {
+  border: 1px solid white;
+  padding: 2em;
+  margin: 4em;
+  border-radius: 10px;
 }
 
 .bg-primary {
   background-color: green;
 }
+
+

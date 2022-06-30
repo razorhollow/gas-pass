@@ -21,7 +21,7 @@
     <h2>Previous Tickets</h2>
     <ul class="list-group">
       <% tickets.forEach(ticket => { %>
-        <a href="/tickets/<%= ticket._id %>" class="text-light"><li class="p-3 list-group-item"><span class="badge bg-success rounded-pill"><%= ticket.ticketNumber %></span></a> <%= ticket.createdAt.toLocaleString() %></li>
+        <a href="/tickets/<%= ticket._id %>" class="text-light"><li class="p-4 list-group-item"><span class="badge bg-success rounded-pill"><%= ticket.ticketNumber %></span></a> <%= ticket.createdAt.toLocaleString() %></li>
       <% }) %> 
     </ul>
   <% } %>

@@ -4,15 +4,15 @@
 <body>
 
 <main class="d-flex flex-column justify-content-center min-vh-100">
-  <div class="card">
-    <div class="card-body">
-      <h4 class="card-title">Ticket Number</h4>
+  <div class="index-card">
+    <div class="index-card-body">
+      <h4 class="index-card-title">Ticket Number</h4>
       <h2><%= ticketNumber %> </h2>
     </div>
   </div>
-  <div class="card">
-    <div class="card-body">
-      <h4 class="card-title">Pre-Pay Amount</h4>
+  <div class="index-card" id="pay-amount">
+    <div class="index-card-body">
+      <h4 class="index-card-title">Pre-Pay Amount</h4>
       <h2>$ <%= profile.currentBalance.amount %></h2>
     </div>
   </div>

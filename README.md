@@ -11,7 +11,8 @@ An automated solution for managing weekly employee fuel allowances and transacti
 
 ## Screenshots
 
-![landing page screenshot](./public/images/user-dash-screenshot.png)
+![user dash screenshot](./public/images/user-dash-screenshot.png)
+![admin screenshot](./public/images/admin-screenshot.png)
 
 ## Technologies Used
 - MongoDB
