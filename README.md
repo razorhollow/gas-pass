@@ -5,7 +5,7 @@ An automated solution for managing weekly employee fuel allowances and transacti
 ![landing page screenshot](./public/images/landing-screenshot.png)
 
 ## Getting Started
-[![badge](https://img.shields.io/badge/deployed-GO%20LIVE-blue)](https://img.shields.io/badge/deployed-GO%20LIVE-blue)
+[![badge](https://rmi-gas-pass.herokuapp.com)](https://img.shields.io/badge/deployed-GO%20LIVE-blue)
 
 [![trello](https://img.shields.io/badge/Planning-TRELLO-success)](https://trello.com/b/dHk6bf0o/gaspass)
 
