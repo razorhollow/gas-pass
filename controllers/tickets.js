@@ -29,6 +29,7 @@ function index(req, res) {
 function newTicket(req, res) {
   // console.log('THE TICKET NUMBER IS: ', random(6).toUpperCase())
   Profile.findById(req.user.profile._id)
+  .populate("currentBalance")
     .then(profile => {
       res.render('tickets/new', {
       title: "New Ticket",

@@ -12,7 +12,7 @@
   <div class="card">
     <div class="card-body">
       <h4 class="card-title">Pre-Pay Amount</h4>
-      <h2>59.95</h2>
+      <h2>$ <%= profile.currentBalance.amount %></h2>
     </div>
   </div>
   <form 
@@ -23,8 +23,8 @@
     <input hidden type="text" value="<%= ticketNumber %>" name="ticketNumber">
     <input type="number" step="any" name="amount">
     <button class="btn btn-outline-light">Submit Ticket</button>
-    <a href="/tickets"><button class="btn btn-outline-light">Cancel</button></a>
   </form>
+    <a href="/tickets"><button class="btn btn-outline-light">Cancel</button></a>
 </main>
 
 <%- include('../partials/footer') %>
