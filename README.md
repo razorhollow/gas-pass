@@ -11,6 +11,8 @@ An automated solution for managing weekly employee fuel allowances and transacti
 
 ## Screenshots
 
+![landing page screenshot](./public/images/user-dash-screenshot.png)
+
 ## Technologies Used
 - MongoDB
 - Express
