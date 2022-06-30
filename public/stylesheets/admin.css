@@ -1,4 +1,10 @@
+body {
+  color: hsl(210, 10%, 62%);
+}
+
 .btn {
   width: 90%;
   height: 90%;
+  border: 1px solid hsl(210, 10%, 62%);
+  color: hsl(210, 10%, 62%);
 }

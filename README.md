@@ -34,4 +34,5 @@ This app uses a simple [random key generator](https://www.npmjs.com/package/rand
 ## Credits
 - badges in the getting started section of this document created by [shields.io](https://shields.io/)
 - logo created using Font Awesome svg
+- background gradient generated at [eggradients.com](https://www.eggradients.com/)
 
