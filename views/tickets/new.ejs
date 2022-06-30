@@ -1,5 +1,5 @@
 <%- include('../partials/html-head') %>
-<link rel="stylesheet" href="stylesheets/tickets.css">
+<link rel="stylesheet" href="../../stylesheets/new.css">
 </head>
 <body>
 
@@ -16,16 +16,18 @@
       <h2>$ <%= profile.currentBalance.amount %></h2>
     </div>
   </div>
-  <form 
-    action="/tickets",
-    method="POST"
-    class="d-flex justify-content-around w-50 mt-4"
-  >
-    <input hidden type="text" value="<%= ticketNumber %>" name="ticketNumber">
-    <input type="number" step="any" name="amount" min="0.01" max="<%= profile.currentBalance.amount %>">
-    <button class="btn btn-outline-light">Submit Ticket</button>
-  </form>
-    <a href="/tickets"><button class="btn btn-outline-light">Cancel</button></a>
+  <div class="submit-section">
+    <form 
+      action="/tickets",
+      method="POST"
+      class="d-flex justify-content-around w-50 mt-4"
+    >
+      <input hidden type="text" value="<%= ticketNumber %>" name="ticketNumber">
+      <input type="number" step="any" name="amount" min="0.01" max="<%= profile.currentBalance.amount %>" placeholder="39.95">
+      <button class="btn btn-outline-light" id="submit">Submit Ticket</button>
+    </form>
+      <a href="/tickets"><button class="btn btn-outline-light" id="cancel">Cancel</button></a>
+  </div>
 </main>
 
 <%- include('../partials/footer') %>

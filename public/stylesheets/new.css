@@ -1,0 +1,53 @@
+input {
+  text-align: center;
+  font-size: 1.5em;
+  padding: 0;
+  margin-left: 50px;
+  width: 32vw;
+}
+
+.index-card {
+  border: 1px solid white;
+  padding: 2em;
+  margin: 4em;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+  padding: 3vh 10px;
+}
+
+.index-card-title {
+  color: hsl(210, 10%, 62%);
+  font-size: 3rem;
+}
+
+.index-card-body>h2 {
+  font-size: 5em;
+  margin: 1em auto;
+}
+
+.submit-section {
+  display: flex;
+  justify-content: space-around;
+  align-items: baseline;
+}
+
+#cancel {
+  height: 40px;
+  width: 20vw;
+  color: hsl(210, 10%, 62%);
+  border-color: hsl(210, 10%, 62%);
+  margin-bottom: 7px;
+}
+
+#submit {
+  height: 40px;
+  color: white;
+  border-color: white;
+  background-color: green;
+  padding-left: 7vw;
+  padding-right: 7vw;
+  margin-left: 10px;
+}
