@@ -14,8 +14,8 @@ router.post('/', isAdmin, adminCtrl.createAllowance)
 //PUT LOCALHOST:3000/admin
 router.put('/', isAdmin, adminCtrl.updateAllowance)
 
-//PATCH localhost:3000/admin/refill
-router.put('/refill', adminCtrl.refill)
+//GET localhost:3000/admin/refill
+router.get('/refill', adminCtrl.refill)
 
 export {
   router

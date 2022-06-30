@@ -1,7 +1,8 @@
 import { Ticket } from '../models/ticket.js'
 import { Profile } from '../models/profile.js'
 import { Allowance } from '../models/allowance.js'
-
+import { Balance } from '../models/balance.js'
+ 
 function index(req, res) {
   Ticket.find({})
   .then(tickets => {
@@ -47,7 +48,21 @@ function updateAllowance(req, res) {
 }
 
 function refill(req, res) {
-
+  Allowance.findOne({})
+  .then(allowance => {
+    Balance.find({})
+    .then(balances => {
+      balances.forEach(balance => {
+        balance.amount = allowance.amount
+        balance.save()
+      })
+      res.redirect('/admin')
+    })
+    .catch(err => {
+      console.log(err)
+      res.redirect('/')
+    })
+  })
 }
 
 

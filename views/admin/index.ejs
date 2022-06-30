@@ -1,4 +1,6 @@
 <%- include('../partials/html-head') %>
+<link rel="stylesheet" href="stylesheets/admin.css">
+</head>
 
 <h1 class="container text-center m-5">Admin Dashboard</h1>
 <div class="container mt-5">
@@ -82,17 +84,17 @@
       </p>
       <div class="collapse" id="allowance-table">
         <div class="card card-body">
-          <h3>The current weekly allowance is: <%= allowance.amount %> </h3>
+          <h3>The current weekly allowance is: $ <%= allowance.amount %> </h3>
           <form action="/admin?_method=PUT" method="POST">
-            <input type="number" name="amount">
-            <button class="btn btn-outline-dark">Change Allowance</button>
+            <input type="number" name="amount" placeholder="150">
+            <button class="btn btn-outline-dark m-3">Change Allowance</button>
           </form>
         </div>
       </div>
   </div>
   <div class="row">
       <section id="refill" class="col">
-        <form action="/admin/refill?_method=PUT" method="POST"><button class="btn btn-outline-dark">Refill Balances</button></form>
+        <form action="/admin/refill" method="GET"><button class="btn btn-outline-dark">Refill Balances</button></form>
       </section>
     <div class="col">
       <a href="/tickets">

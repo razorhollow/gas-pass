@@ -1,11 +1,13 @@
 import { Ticket } from '../models/ticket.js'
 import { Profile } from '../models/profile.js'
+import { Balance } from '../models/balance.js'
 import random from 'random-key-generator'
 
 function index(req, res) {
   Ticket.find({employee: req.user.profile._id})
   .then(tickets => {
     Profile.findById(req.user.profile._id)
+    .populate('currentBalance')
     .then(profile => {
       res.render('tickets/index', {
         title: "Dashboard",

@@ -1,7 +1,8 @@
 import mongoose from 'mongoose'
 
+const Schema = mongoose.Schema
+
 const balanceSchema = new mongoose.Schema({
-  employee: {type: Schema.Types.ObjectId, ref: "Profile"},
   amount: Number,
 }, {
   timestamps: true
