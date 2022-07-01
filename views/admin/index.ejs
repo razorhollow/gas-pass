@@ -30,7 +30,7 @@
                 <th scope="row"><%= profile.name %></th>
                 <td><%= profile.isAdmin ? "✔️" : "" %></td>
                 <td><%= profile.isActive ? "✔️" : "" %></td>
-                <td><%= profile.createdAt.toLocaleString() %></td>
+                <td><%= profile.createdAt.toLocaleString("en-US", {timeZone: "America/New_York"}) %></td>
                 <td><form action="/profiles/<%= profile._id %>/toggle-admin?_method=PATCH" method="POST"><button class="btn btn-outline-dark toggle-button">Toggle Admin</button></form></td>
               </tr>
             <% }) %> 
