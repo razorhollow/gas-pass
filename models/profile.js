@@ -6,7 +6,7 @@ const Schema = mongoose.Schema
 const profileSchema = new mongoose.Schema({
   name: String,
   currentBalance: {type: Schema.Types.ObjectId, ref: 'Balance'},
-  isAdmin: {type: Boolean, default: true},
+  isAdmin: {type: Boolean, default: false},
   isActive: {type: Boolean, default: true},
 }, {
   timestamps: true
