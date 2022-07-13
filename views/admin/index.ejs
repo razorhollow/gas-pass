@@ -60,7 +60,7 @@
           <tbody>
             <% tickets.forEach(ticket => { %>
               <tr>
-                <th scope="row"><%= ticket.ticketNumber %></th>
+                <th scope="row"><a href="/tickets/<%= ticket._id %>"><%= ticket.ticketNumber %></a></th>
                 <td><%= ticket.createdAt.toLocaleString() %></td>
                 <td><%= ticket.amount %></td>
                 <td><a href="/tickets/<%= ticket._id %>/edit"><button class="btn btn-outline-dark toggle-button">Edit</button></a></td>
