@@ -5,6 +5,7 @@ import { Balance } from '../models/balance.js'
  
 function index(req, res) {
   Ticket.find({})
+  .populate('employee')
   .then(tickets => {
     Profile.find({})
     .then(profiles => {

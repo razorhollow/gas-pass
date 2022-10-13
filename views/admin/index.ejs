@@ -50,8 +50,9 @@
         <table class="table">
           <thead>
             <tr>
-              <th scope="col">Ticket Number</th>
               <th scope="col">Date</th>
+              <th scope="col">Name</th>
+              <th scope="col">Ticket Number</th>
               <th scope="col">Amount</th>
               <th scope="col">Edit</th>
               <th scope="col">Delete</th>
@@ -60,8 +61,9 @@
           <tbody>
             <% tickets.forEach(ticket => { %>
               <tr>
-                <th scope="row"><a href="/tickets/<%= ticket._id %>"><%= ticket.ticketNumber %></a></th>
                 <td><%= ticket.createdAt.toLocaleString() %></td>
+                <td><%= ticket.employee.name %></td>
+                <th scope="row"><a href="/tickets/<%= ticket._id %>"><%= ticket.ticketNumber %></a></th>
                 <td><%= ticket.amount %></td>
                 <td><a href="/tickets/<%= ticket._id %>/edit"><button class="btn btn-outline-dark toggle-button">Edit</button></a></td>
                 <td>
